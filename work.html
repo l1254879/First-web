@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> This is my first web</title>
+	<meta name="description" content="Camp work">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="./style.css"/>
+
+	<script type="text/javascript">
+	$.ajax({
+		url: "http://maps.googleapis.com/maps/api/geocode/json",
+		type:"GET",
+		dataType:"json",
+		data:{
+			address:"聖約翰科技大學"
+		},
+		sucess function (data,textStatus,jqXHR){
+			console.log(data);
+			$("body").append("名稱"+data.results[0].address_compents[0.long_name);
+			$("body").append("</br>");
+			$("body").append("地址"+data.results[0].formatted_address);
+			$("body").append("</br>");
+			$("body").append("經度"+data.results[0].geometry.location.lng);
+			$("body").append("</br>");
+			$("body").append("緯度"+data.results[0].geometry.location.lat);
+
+		}
+	})
+
+	</script>
+<head>
+
+<body onload="load()">
+	
+	<div id="a1" align="center">
+		My little dog
+	</div>
+		
+<margin="30px">
+
+<form>
+	<table border="1" align="center">
+	<tr>
+		<td>name: <input type="text" name="name" vale="a"><br/><br/></td>
+		<td rowspan="4">
+			<a href="http://animal-adoption.coa.gov.tw/">
+			<img src="http://saratogacountyny.gov/shelter/wp-content/gallery/home/PuppyTestScott.jpg"/;>
+	</a>
+		</td>
+	</tr>
+	<tr>
+		<td>sex: 
+			<ol>
+				<li>man<input type="radio" name="sex" value="m"></li>
+				<li>girl<input type="radio" name="sex" value="g"></li>
+			</ol></br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Suggest</br><textarea></textarea></br></br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="submit" name="submit" value="Present"></form>
+		</td>
+	</tr>
+	</table>
+</form>
+	</br>
+
+	日期<button type="button" onclick="click1()" ></button></br>
+	Account<input type="text" name="acc" value="apple"/>
+
+</body>
+
+</html>
